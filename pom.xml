@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Maven 项目对象模型(POM) 文件的根元素 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- POM文件的模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目坐标，包括组织ID，项目ID和版本 -->
+    <groupId>com.sunwhite</groupId> <!-- 项目的组织或公司ID -->
+    <artifactId>algoeasy</artifactId> <!-- 项目的唯一ID -->
+    <version>1.0.0</version> <!-- 项目的版本号 -->
+    <packaging>jar</packaging> <!-- 项目打包类型 -->
+    <name>Algorithm Easy Project</name>       <!-- 项目的名称，可选 -->
+    <!-- 项目的描述 -->
+    <description>This is a algorithm wrapper project.</description>
+    <!-- 项目的URL，可选 -->
+    <url></url>
+    <!-- 项目依赖声明部分 -->
+    <dependencies>
+        <!-- 对Spring框架核心模块的依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId> <!-- 依赖的组织或公司ID -->
+            <artifactId>lombok</artifactId> <!-- 依赖的唯一ID -->
+            <version>1.18.32</version> <!-- 依赖的版本号 -->
+        </dependency>
+        <!-- 其他依赖可以在这里添加 -->
+    </dependencies>
+
+    <!-- 构建配置部分 -->
+    <build>
+        <plugins>
+            <!-- Maven编译插件的配置 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId> <!-- 插件的组织或公司ID -->
+                <artifactId>maven-compiler-plugin</artifactId> <!-- 插件的唯一ID -->
+                <version>3.13.0</version> <!-- 插件的版本号 -->
+                <configuration>
+                    <source>21</source> <!-- Java源代码的兼容版本 -->
+                    <target>21</target> <!-- Java目标代码的兼容版本 -->
+                </configuration>
+            </plugin>
+            <!-- 其他构建插件可以在这里添加 -->
+        </plugins>
+        <!-- 资源配置 -->
+        <resources>
+            <!-- 描述存放资源的目录，该路径相对POM路径 -->
+            <resource>
+                <directory>src/main/java</directory>
+                <!-- 包含的模式列表，例如**/*.xml -->
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <!-- 是否使用参数值代替参数名 -->
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <!-- 仓库配置部分 -->
+    <repositories>
+        <!-- Maven中央仓库的配置 -->
+        <repository>
+            <id>central</id> <!-- 仓库的唯一ID -->
+            <url>https://repo.maven.apache.org/maven2</url> <!-- 仓库的URL地址 -->
+        </repository>
+        <!-- 其他仓库可以在这里添加 -->
+    </repositories>
+</project>
